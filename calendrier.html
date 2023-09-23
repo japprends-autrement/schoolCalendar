@@ -1,0 +1,220 @@
+<meta charset="utf-8">
+<style>
+button {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 1px 1px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+td {
+  text-align: center;
+}
+table {
+  table-layout: fixed;
+  text-align: center;
+  width:100%
+}
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+</style>
+<table style="width:100%">
+<tr>
+<td><button id="M1" onclick="selectFilter(this);">M1</button></td>
+<td><button id="M2" onclick="selectFilter(this);">M2</button></td>
+<td><button id="M3" onclick="selectFilter(this);">M3</button></td>
+<td><button id="P1" onclick="selectFilter(this);">P1</button></td>
+<td><button id="P2" onclick="selectFilter(this);">P2</button></td>
+<td><button id="P3" onclick="selectFilter(this);">P3</button></td>
+<td><button id="P4" onclick="selectFilter(this);">P4</button></td>
+<td><button id="P5" onclick="selectFilter(this);">P5</button></td>
+<td><button id="P6" onclick="selectFilter(this);">P6</button></td>
+</tr>
+</table>
+<br>
+<div id ='gameArea'></div>
+<xml id="calecole" style=" display: none; "><calendrier>ECOLE</calendrier><evenement>Fancy-fair</evenement><debut>jeudi 25 mai 2024</debut><fin>jeudi 25 mai 2024</fin>
+<calendrier>ECOLE</calendrier><evenement>Férié - Fête de la communauté française</evenement><debut>mercredi 27 septembre 2023</debut><fin>mercredi 27 septembre 2023</fin>
+<calendrier>ECOLE</calendrier><evenement>Congé d'automne</evenement><debut>samedi 21 octobre 2023</debut><fin>dimanche 5 novembre 2023</fin>
+<calendrier>ECOLE</calendrier><evenement>Journée pédagogique 1</evenement><debut>vendredi 10 novembre 2023</debut><fin>vendredi 10 novembre 2023</fin>
+<calendrier>ECOLE</calendrier><evenement>Congé d'hiver</evenement><debut>samedi 23 décembre 2023</debut><fin>dimanche 7 janvier 2024</fin>
+<calendrier>ECOLE</calendrier><evenement>Férié : Mardi Gras </evenement><debut>mardi 6 février 2024</debut><fin>mardi 6 février 2024</fin>
+<calendrier>ECOLE</calendrier><evenement>Congé de détente</evenement><debut>samedi 24 février 2024</debut><fin>dimanche 10 mars 2024</fin>
+<calendrier>ECOLE</calendrier><evenement>Journée pédagogique 2</evenement><debut>vendredi 22 mars 2024</debut><fin>vendredi 22 mars 2024</fin>
+<calendrier>ECOLE</calendrier><evenement>Férié : lundi de Pâques</evenement><debut>lundi 1 avril 2024</debut><fin>lundi 1 avril 2024</fin>
+<calendrier>ECOLE</calendrier><evenement>Congé de printemps</evenement><debut>samedi 27 avril 2024</debut><fin>vendredi 12 avril 2024</fin>
+<calendrier>ECOLE</calendrier><evenement>Férié : lundi de Pantecôte</evenement><debut>lundi 20 mai 2024</debut><fin>lundi 20 mai 2024</fin>
+<calendrier>M1-M3</calendrier><evenement>Réunion de rentrée</evenement><debut>jeudi 21 septembre 2023</debut><fin>jeudi 21 septembre 2023</fin>
+<calendrier>M2-M3</calendrier><evenement>Adeps - journée sportive</evenement><debut>vendredi 23 février 2024</debut><fin>vendredi 23 février 2024</fin>
+<calendrier>M2-M3-P3-P4-P5-P6</calendrier><evenement>Cross: "Je cours pour ma forme autour du monde"</evenement><debut>mardi 19 septembre 2023</debut><fin>mardi 19 septembre 2023</fin>
+<calendrier>P1-P2</calendrier><evenement>Adeps - journée sportive</evenement><debut>jeudi 19 octobre 2023</debut><fin>jeudi 19 octobre 2023</fin>
+<calendrier>P1-P2</calendrier><evenement>Adeps - journée sportive</evenement><debut>jeudi 30 mai 2024</debut><fin>jeudi 30 mai 2024</fin>
+<calendrier>P1-P2</calendrier><evenement>Journée à la ferme de Beauffaux</evenement><debut>mardi 19 septembre 2023</debut><fin>mardi 19 septembre 2023</fin>
+<calendrier>P1-P2</calendrier><evenement>Réunion de rentrée</evenement><debut>mardi 26 septembre 2023</debut><fin>mardi 26 septembre 2023</fin>
+<calendrier>P3</calendrier><evenement>Evaluations externes non certificatives</evenement><debut>lundi 2 octobre 2023</debut><fin>vendredi 6 octobre 2023</fin>
+<calendrier>P3-P4</calendrier><evenement>Bulletin 3</evenement><debut>lundi 1 juillet 2024</debut><fin>lundi 1 juillet 2024</fin>
+<calendrier>P3-P4</calendrier><evenement>Adeps - journée sportive</evenement><debut>lundi 16 octobre 2023</debut><fin>lundi 16 octobre 2023</fin>
+<calendrier>P3-P4</calendrier><evenement>Adeps - journée sportive</evenement><debut>lundi 19 février 2024</debut><fin>lundi 19 février 2024</fin>
+<calendrier>P3-P4</calendrier><evenement>Cinéma Saint Nicolas</evenement><debut>lundi 4 décembre 2023</debut><fin>lundi 4 décembre 2023</fin>
+<calendrier>P3-P4</calendrier><evenement>Théâtre CNN</evenement><debut>mardi 17 octobre 2023</debut><fin>mardi 17 octobre 2023</fin>
+<calendrier>P3-P4</calendrier><evenement>Bambois</evenement><debut>mardi 2 juillet 2024</debut><fin>mardi 2 juillet 2024</fin>
+<calendrier>P3-P4</calendrier><evenement>Réunion de rentrée</evenement><debut>mardi 5 septembre 2023</debut><fin>mardi 5 septembre 2023</fin>
+<calendrier>P3-P4</calendrier><evenement>Spectacle de cycle</evenement><debut>mercredi 21 février 2024</debut><fin>mercredi 21 février 2024</fin>
+<calendrier>P3-P4</calendrier><evenement>Bulletin 2</evenement><debut>vendredi 5 avril 2024</debut><fin>vendredi 5 avril 2024</fin>
+<calendrier>P3-P4</calendrier><evenement>Bulletin 1</evenement><debut>vendredi 8 décembre 2023</debut><fin>vendredi 8 décembre 2023</fin>
+<calendrier>P5</calendrier><evenement>Evaluations externes non certificatives</evenement><debut>lundi 2 octobre 2023</debut><fin>vendredi 6 octobre 2023</fin>
+<calendrier>P5-P6</calendrier><evenement>Cap sciences</evenement><debut>jeudi 12 octobre 2023</debut><fin>jeudi 12 octobre 2023</fin>
+<calendrier>P5-P6</calendrier><evenement>Bulletin 2</evenement><debut>lundi 1 avril 2024</debut><fin>vendredi 5 avril 2024</fin>
+<calendrier>P5-P6</calendrier><evenement>Séjour scolaire - Arlon</evenement><debut>lundi 11 décembre 2023</debut><fin>vendredi 15 décembre 2023</fin>
+<calendrier>P5-P6</calendrier><evenement>Réunion de rentrée</evenement><debut>lundi 11 septembre 2023</debut><fin>lundi 11 septembre 2023</fin>
+<calendrier>P5-P6</calendrier><evenement>Bulletin 1</evenement><debut>lundi 4 décembre 2023</debut><fin>vendredi 8 décembre 2023</fin>
+<calendrier>P5-P6</calendrier><evenement>Spectacle au Delta Katabanga</evenement><debut>mardi 10 octobre 2023 13h30</debut><fin>mardi 10 octobre 2023</fin>
+<calendrier>P5-P6</calendrier><evenement>Adeps - journée sportive</evenement><debut>mardi 28 mai 2024</debut><fin>mardi 28 mai 2024</fin>
+<calendrier>P5-P6</calendrier><evenement>Adeps - journée sportive</evenement><debut>mardi 28 mai 2024</debut><fin>mardi 28 mai 2024</fin>
+<calendrier>P5-P6</calendrier><evenement>Animation nature</evenement><debut>vendredi 13 octobre 2023</debut><fin>vendredi 13 octobre 2023</fin>
+<calendrier>P5-P6</calendrier><evenement>Expos photos nature - Natagora</evenement><debut>vendredi 22 septembre 2023</debut><fin>vendredi 22 septembre 2023</fin>
+<calendrier>P5-P6</calendrier><evenement>Bulletin 3</evenement><debut>vendredi 5 juillet 2024</debut><fin>vendredi 5 juillet 2024</fin>
+<calendrier>P6</calendrier><evenement>Epreuves externes - CEB</evenement><debut>lundi 24 juin 2024</debut><fin>vendredi 28 juin 2024</fin>
+</xml>
+<script>
+ var datas={
+   calendrier:[],
+   evenement:[],
+   debut:[],
+   fin:[]
+};
+var selectedFilter="";
+function selectFilter(me) 
+  {
+  if (selectedFilter==me.id) 
+   {
+   selectedFilter="";
+   me.style.backgroundColor = "white";
+   }
+  else
+   {
+   if (selectedFilter!="") {document.getElementById(selectedFilter).style.backgroundColor = "white";}
+  selectedFilter=me.id;
+  me.style.backgroundColor = "green";
+   }
+   showCalendar();
+  }
+function insertAt(array, index, ...elementsArray) {
+    array.splice(index, 0, ...elementsArray);
+}
+
+function cleanArray(array) 
+{
+  const uniqueValues = array.filter((item, index) => array.indexOf(item) === index && item !== undefined);
+  return uniqueValues;
+} 
+function compare(a, b) {
+  if (parseInt(a.substr(0, 13))<parseInt(b.substr(0, 13)))
+     return -1;
+  if (parseInt(b.substr(0, 13))<parseInt(a.substr(0, 13)))
+     return 1;
+  // a doit être égal à b
+  return 0;
+}
+function adaptCalDate(dateStr)
+{
+
+var monthNames=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+
+const myArray = dateStr.split(" ");
+var month =monthNames.indexOf(myArray[2])+1;
+var datestr=myArray[3]+"-"+month+"-"+myArray[1];
+return Date.parse(datestr);
+}  
+function orderDates()
+{
+var orderedCalendar=[];
+var nonOrderedCalendar=[];
+var tmp=[];
+for (i=0;i<datas["debut"].length;i++)
+{
+tmp.push(parseInt(adaptCalDate(datas["debut"][i])));
+
+tmp2=adaptCalDate(datas["fin"][i]);
+
+nonOrderedCalendar.push(tmp[i] + "*"+datas["debut"][i]+ "*"+datas.calendrier[i]+ "*"+datas.evenement[i]+ "*"+datas.fin[i]+ "*"+tmp2);
+}
+
+tmp=cleanArray(tmp);
+tmp=tmp.sort();
+
+for (i=0;i<tmp.length;i++)
+ {
+ for (j=0;j<nonOrderedCalendar.length;j++)
+  {
+  if (parseInt(nonOrderedCalendar[j].substr(0, 13)) == tmp[i]) {orderedCalendar.push(nonOrderedCalendar[j])}
+  }
+ }
+
+return orderedCalendar;
+
+}
+
+ var tag=["calendrier","evenement","debut","fin"];
+ 
+ datas["myNodeList_calendrier"] = document.getElementById("calecole").querySelectorAll("calendrier");
+
+ datas["myNodeList_evenement"] = document.getElementById("calecole").querySelectorAll("evenement");
+ datas["myNodeList_debut"] = document.getElementById("calecole").querySelectorAll("debut");
+ datas["myNodeList_fin"] = document.getElementById("calecole").querySelectorAll("fin");
+
+
+
+for (j=0;j<tag.length;j++)
+{
+for (i=0;i<datas["myNodeList_"+tag[j]].length;i++) {datas[tag[j]].push(datas["myNodeList_"+tag[j]][i].innerHTML);}
+}
+var listDate=orderDates();
+showCalendar();
+function showCalendar()
+ {
+var container=document.getElementById("gameArea");
+container.innerHTML="";
+var table = document.createElement("table");
+table.style.width="100%";
+container.appendChild(table); 
+
+for (i=0;i<listDate.length;i++)
+ {
+ var tmp=listDate[i].split("*");
+ if (Date.now()<tmp[5])
+ {
+ if ((selectedFilter=="" )||((tmp[2].search(selectedFilter))!=-1)|| tmp[2]=="ECOLE") 
+
+  {
+ var tr = document.createElement("tr");
+  table.appendChild(tr);
+ var td = document.createElement("td");
+ tr.appendChild(td); 
+ var div=document.createElement("div"); 
+ div.innerHTML= tmp[1];
+if (tmp[4]!=tmp[1]) {div.innerHTML=div.innerHTML +  "<br> <b>Date de fin : " +  tmp[4]+"</b>";}
+ td.appendChild(div); 
+ 
+  var td = document.createElement("td");
+ tr.appendChild(td); 
+ var div=document.createElement("div"); 
+ div.innerHTML= tmp[3] + "<br> <b>Concerne : " +  tmp[2]+"</b>";
+
+ td.appendChild(div);
+    br = document.createElement("br");
+ td.appendChild(br); 
+   }
+   }
+}
+}
+ 
+</script>
+
